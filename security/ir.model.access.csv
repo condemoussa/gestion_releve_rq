@@ -1,0 +1,12 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_atm_plannique,atm.plannique,model_atm_plannique,,1,1,1,1
+access_atm_planiques,atm.planiques,model_atm_planiques,,1,1,1,1
+access_atm_releve,atm.releve,model_atm_releve,,1,1,1,1
+access_rapport_releve,rapport.releve,model_rapport_releve,,1,1,1,1
+access_atm_equipement,atm.equipement,model_atm_equipement,,1,1,1,1
+access_rapport_jour,rapport.jour,model_rapport_jour,,1,1,1,1
+
+
+
+
+

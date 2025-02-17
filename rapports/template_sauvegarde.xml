@@ -1,0 +1,128 @@
+<odoo>
+    <data>
+         <template id="wizard_report_pdf_releve_equipement">
+             <t t-call="web.html_container">
+                 <t t-call="web.internal_layout">
+                     <div class="page">
+                                 <table style="width:100%;text-align:center;" class="table table-responsive table-striped table-bordered thead-dark table-sm">
+                                  <tr>
+                                       <td rowspan="4" style="width:300px;">
+                                           <img src="/gestion_releve_rq/static/src/img/hr_employee_payroll-image.jpg"/>
+
+                                       </td>
+                                       <td colspan="8" style="width:1000px;">RELEVE PERIODIQUE DES INDICATEURS</td>
+                                       <td style="width:300px;">Année</td>
+                                       <td style="width:300px;"> <span t-esc="form_data['val_anne']"/></td>
+                                  </tr>
+                                    <tr>
+                                       <td colspan="7">EQUIPE DE QUART</td>
+                                       <td>PERIODE QUART</td>
+                                       <td>Mois</td>
+                                       <td><span t-esc="form_data['val_mois']"/></td>
+                                  </tr>
+                                    <tr>
+                                       <td colspan="6">CHEF EQUIPE</td>
+                                       <td>COLLABORATEUR</td>
+                                       <td rowspan="2" style="text-align:center;margin-top:10px;">
+                                           <t t-if="form_data.get('type_round') =='m'">
+                                             MATIN
+                                           </t>
+                                            <t t-if="form_data.get('type_round') =='n'">
+                                             NUIT
+                                           </t>
+                                            <t t-if="form_data.get('type_round') =='am'">
+                                             APRES-MIDI
+                                           </t>
+                                            <t t-if="form_data.get('type_round') =='j'">
+                                             JOUR
+                                           </t>
+
+<!--                                           <t t-esc="form_data['type_round']"></t>-->
+                                       </td>
+                                       <td rowspan="2">JOUR</td>
+                                       <td rowspan="2"> <span t-esc="form_data['val_jour']"/></td>
+                                  </tr>
+                                    <tr>
+                                       <td colspan="6">Valeur</td>
+                                       <td><span t-esc="user.login"/></td>
+                                  </tr>
+
+                                     </table>
+                                 <table style="width:100%;text-align:center;font-size:14px;" class="table table-responsive table-striped table-bordered thead-dark table-sm">
+                                  <tr>
+                                           <td rowspan="2" style="width:400px;">ELEMENT SUPERVISES</td>
+                                           <td rowspan="2"  style="width:154px;">Valeur par defaut</td>
+                                           <td rowspan="2" style="width:154px;">Température par defaut</td>
+                                           <td style="width:100px;">ROUND 1</td>
+                                           <td style="width:100px;">ROUND 2</td>
+                                           <td style="width:100px;">ROUND 3</td>
+                                           <td style="width:100px;">ROUND 4</td>
+                                           <td style="width:100px;">ROUND 5</td>
+                                           <td style="width:100px;">ROUND 6</td>
+                                           <td style="width:100px;">ROUND 7</td>
+                                           <td style="width:100px;">ROUND 8</td>
+                                  </tr>
+                                     <t t-if="form_data.get('type_round') =='m'">
+                                        <tr>
+                                            <td>HEURE :7H</td>
+                                            <td>HEURE :8H</td>
+                                            <td>HEURE :9H</td>
+                                            <td>HEURE :10H</td>
+                                            <td>HEURE :11H</td>
+                                            <td>HEURE :12H</td>
+                                            <td>HEURE :13H</td>
+                                            <td>HEURE :14H</td>
+
+                                        </tr>
+                                   </t>
+                                     <t t-if="form_data.get('type_round') =='am'">
+                                        <tr>
+                                            <td>HEURE :15H</td>
+                                            <td>HEURE :16H</td>
+                                            <td>HEURE :17H</td>
+                                            <td>HEURE :18H</td>
+                                            <td>HEURE :19H</td>
+                                            <td>HEURE :20H</td>
+                                            <td>HEURE :21H</td>
+                                            <td>HEURE :22H</td>
+                                        </tr>
+                                   </t>
+                                     <t t-if="form_data.get('type_round') =='n'">
+                                         <tr>
+                                            <td>HEURE :23H</td>
+                                            <td>HEURE :24H</td>
+                                            <td>HEURE :00H</td>
+                                            <td>HEURE :01H</td>
+                                            <td>HEURE :02H</td>
+                                            <td>HEURE :03H</td>
+                                            <td>HEURE :04H</td>
+                                            <td>HEURE :05H</td>
+                                         </tr>
+                                   </t>
+                                     <t t-foreach="resultat" t-as="line">
+                                          <tr>
+                                              <td><span t-esc="line[0]"/></td>
+                                              <td><span t-esc="line[1]"/></td>
+                                              <td><span t-esc="line[2]"/></td>
+                                              <td><span t-esc="line[3]"/></td>
+                                              <td></td>
+                                              <td></td>
+                                               <td></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+                                              <td></td>
+
+                                      </tr>
+
+                                     </t>
+
+                                     </table>
+
+
+                          </div>
+                 </t>
+             </t>
+         </template>
+    </data>
+</odoo>

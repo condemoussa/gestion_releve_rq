@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="tableau_admin_releve" model="res.groups">
+            <field name="name">Admin Releve RQ</field>
+        </record>
+
+    </data>
+</odoo>

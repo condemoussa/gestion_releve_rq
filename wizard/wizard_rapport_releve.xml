@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizard_rapport_releves">
+            <field name="name">RAPPORT RELEVÉS</field>
+            <field name="model">rapport.releve</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="RAPPORT RELEVES">
+                    <sheet>
+                            <group>
+                                <group>
+                                    <field name="dat_debut" string="Date de debut"/>
+                               </group>
+                                <group>
+                                     <field name="dat_fin" string="Date de fin"/>
+                               </group>
+                            </group>
+
+                            <group>
+                                     <field name="vacation" string="Vacation"/>
+                            </group>
+                    </sheet>
+                    <shooter>
+                          <button name="releve" type="object" string="Vacation 1" style="margin-right:10px;margin-left:4px;"/>
+                          <button name="releve_vacation2" type="object" string="Vacation 2" style="margin-right:10px;"/>
+                          <button name="releve_vacation3" type="object" string="Vacation 3"/>
+                    </shooter>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_rapport_releve_form_view">
+            <field name="name">RAPPORT RELEVES</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rapport.releve</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="wizard_rapport_releves"/>
+        </record>
+
+<!--        <record id="action_report_demande_change" model="ir.actions.report">-->
+<!--            <field name="name">DEMANDE DE CHANGEMENT REPORT</field>-->
+<!--            <field name="model">demande.change.report</field>-->
+<!--            <field name="report_type">qweb-pdf</field>-->
+<!--            <field name="report_name">gestion_demande_changement.report_demande_change</field>-->
+<!--            <field name="report_file">gestion_demande_changement.report_demande_change</field>-->
+<!--&lt;!&ndash;            <field name="binding_model_id" ref="model_account_common_journal_report"/>&ndash;&gt;-->
+<!--            <field name="binding_type">report</field>-->
+<!--        </record>-->
+
+        <record id="action_rapport_releve_equipement_pdf" model="ir.actions.report">
+            <field name="name">RELEVES D'EQUIPEMENT</field>
+            <field name="model">rapport.releve</field>
+            <field name="binding_model_id" ref="model_rapport_releve"/>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gestion_releve_rq.wizard_report_pdf_releve_equipement</field>
+            <field name="report_file">gestion_releve_rq.wizard_report_pdf_releve_equipement</field>
+            <field name="binding_view_types">list</field>
+        </record>
+
+          <record id="action_rapport_releve_equipement_pdf_vacation2" model="ir.actions.report">
+            <field name="name">RELEVES D'EQUIPEMENT</field>
+            <field name="model">rapport.releve</field>
+            <field name="binding_model_id" ref="model_rapport_releve"/>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gestion_releve_rq.wizard_report_pdf_releve_equipement_v2</field>
+            <field name="report_file">gestion_releve_rq.wizard_report_pdf_releve_equipement_v2</field>
+            <field name="binding_view_types">list</field>
+        </record>
+
+         <record id="action_rapport_releve_equipement_pdf_vacation3" model="ir.actions.report">
+            <field name="name">RELEVES D'EQUIPEMENT</field>
+            <field name="model">rapport.releve</field>
+            <field name="binding_model_id" ref="model_rapport_releve"/>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gestion_releve_rq.wizard_report_pdf_releve_equipement_v3</field>
+            <field name="report_file">gestion_releve_rq.wizard_report_pdf_releve_equipement_v3</field>
+            <field name="binding_view_types">list</field>
+        </record>
+
+    </data>
+</odoo>

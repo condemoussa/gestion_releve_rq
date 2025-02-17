@@ -1,0 +1,151 @@
+<odoo>
+    <data>
+        <template id="wizard_report_pdf_releve_equipement_v3">
+            <t t-call="web.html_container">
+                <t t-call="web.internal_layout">
+                    <style>
+                        caption {
+                            caption-side: top; /* Place le titre au-dessus */
+                            font-weight: bold;
+                            font-size: 1.2em;
+                            margin-bottom: 5px;
+                        }
+                    </style>
+                    <div class="page">
+                          <h1 style="font-weight:bold;color:green;">VACATION 3 :22h À 08h</h1>
+                            <h4 style="color:green;font-weight:bold;"> Rapport de relevé du <t t-esc="form_data['dat_debut']"/> au <t t-esc="form_data['dat_fin']"/></h4>
+                        <table style="width:100%;text-align:center;font-size:14px;" class="table">
+                            <tr>
+                                <td style="width:700px;background:#F0602B;color:white;font-weight:bold;border:1px solid black;"></td>
+                                <td style="width:300px; background:#F0602B;color:white;font-weight:bold;border:1px solid black;" colspan="3">RONDE 1 (22h)</td>
+                                <td style="width:300px; background:#F0602B;color:white;font-weight:bold;border:1px solid black;" colspan="3">RONDE 2 (00h)</td>
+                                <td style="width:200px; background:#F0602B;color:white;font-weight:bold;border:1px solid black;" colspan="3">RONDE 3 (02h)</td>
+                                <td style="width:300px; background:#F0602B;color:white;font-weight:bold;border:1px solid black;" colspan="3">RONDE 4 (04h)</td>
+                                <td style="width:300px; background:#F0602B;color:white;font-weight:bold;border:1px solid black;" colspan="3">RONDE 5 (06h)</td>
+                                <td style="width:200px; background:#F0602B;color:white;font-weight:bold;border:1px solid black;" colspan="3">RONDE 6 (08h)</td>
+                            </tr>
+                            <tr>
+                                <td style="width:700px;font-weight:bold;border:1px solid black;background:#F59C8A;">Équipement</td>
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Statut</td>
+                                <td style="width:80px;font-weight:bold;border:1px solid black;background:#F59C8A;">Obser..</td>
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Valeur</td>
+                                <!-- Ronde 1 -->
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Statut</td>
+                                <td style="width:80px;font-weight:bold;border:1px solid black;background:#F59C8A;">Obser..</td>
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Valeur</td>
+                                <!-- Ronde 2 -->
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Statut</td>
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Obser..</td>
+                                <td style="width:300px;border:1px solid black;background:#F59C8A;">Valeur</td>
+                                  <!-- Ronde 4 -->
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Statut</td>
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Obser..</td>
+                                <td style="width:300px;border:1px solid black;background:#F59C8A;">Valeur</td>
+                                  <!-- Ronde 5 -->
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Statut</td>
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Obser..</td>
+                                <td style="width:300px;border:1px solid black;background:#F59C8A;">Valeur</td>
+                                  <!-- Ronde 6 -->
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Statut</td>
+                                <td style="width:300px;font-weight:bold;border:1px solid black;background:#F59C8A;">Obser..</td>
+                                <td style="width:300px;border:1px solid black;background:#F59C8A;">Valeur</td>
+                            </tr>
+
+                            <t t-if="resultat">
+
+                                <t t-foreach="resultat" t-as="line">
+                                  <t t-if="line[1] and line[3]">
+                                     <tr>
+                                        <!-- Équipement -->
+                                         <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[0]"/></td>
+<!--                                        &lt;!&ndash; Ronde 1 (22h) &ndash;&gt;-->
+                                        <t t-if="line[5] == 'ronde1'">
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[1]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[2]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[3]"/></td>
+                                        </t>
+                                        <t t-else="">
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                        </t>
+
+<!--                                        &lt;!&ndash; Ronde 2 (00h) &ndash;&gt;-->
+                                        <t t-if="line[5] == 'ronde2'">
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[1]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[2]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[3]"/></td>
+                                        </t>
+                                        <t t-else="">
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                        </t>
+
+<!--                                        &lt;!&ndash; Ronde 3 (02h) &ndash;&gt;-->
+                                        <t t-if="line[5] == 'ronde3'">
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[1]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[2]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[3]"/></td>
+                                        </t>
+                                        <t t-else="">
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                        </t>
+                                         <!-- Ronde 3 (04h) -->
+                                        <t t-if="line[5] == 'ronde4'">
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[1]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[2]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[3]"/></td>
+                                        </t>
+                                        <t t-else="">
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                        </t>
+                                          <t t-if="line[5] == 'ronde5'">
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[1]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[2]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[3]"/></td>
+                                        </t>
+                                            <t t-else="">
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                        </t>
+                                         <t t-if="line[5] == 'ronde6'">
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[1]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[2]"/></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"><span t-esc="line[3]"/></td>
+                                        </t>
+                                        <t t-else="">
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                            <td style="border:1px solid black;background:#F59C8A;"></td>
+                                        </t>
+                                    </tr>
+                                  </t>
+                                </t>
+                            </t>
+                        </table>
+
+                        <br/>
+                        <table>
+                            <tr>
+                                <td><b>OK :</b> <span style="color:blue;">aucun dysfonctionnement</span></td>
+                            </tr>
+                            <tr>
+                                <td><b>NOK :</b> <span style="color:blue;">dysfonctionnement observé. La partie observation doit être remplie</span></td>
+                            </tr>
+                            <tr>
+                                <td><b style="color:blue;">NB : La ronde se fait toutes les deux heures</b></td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+
+            </t>
+        </template>
+    </data>
+</odoo>

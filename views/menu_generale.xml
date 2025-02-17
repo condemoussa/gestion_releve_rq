@@ -1,0 +1,81 @@
+<odoo>
+  <data>
+      <!-- menu general  -->
+      <menuitem name="GESTION DES RELEVÉS" id="id_menu_general_gestion_releve"
+                groups="gestion_demande_changement.equipe_dpi,gestion_demande_changement.group_gestion_releve"
+      />
+
+        <!-- *************************************************************** -->
+      <!-- menu ot -->
+<!--      <menuitem-->
+<!--                    name="Plannings" id="id_premier_plannique_sous_menu"-->
+<!--                    parent="id_menu_general_gestion_releve"-->
+<!--                    sequence="1"   />-->
+
+<!--       <menuitem name="Modèle d'importation " id="id_premier_plannique_sous_menu_liste"-->
+<!--                      parent="id_premier_plannique_sous_menu"-->
+<!--                      action="view_action_planique_gs2e"-->
+<!--                      groups="gestion_releve_rq.tableau_planique"-->
+<!--                      sequence="1" />-->
+
+<!--      <menuitem name="Tableau de bord planning" id="id_premier_pl_sous_menu_liste"-->
+<!--                      parent="id_premier_plannique_sous_menu"-->
+<!--                      action="view_action_gestion_releve"-->
+<!--                      sequence="2"  />-->
+
+      <menuitem
+                    name="Relevés" id="id_premier_releves_mois"
+                    parent="id_menu_general_gestion_releve"
+                    sequence="2"
+            />
+         <menuitem name="Liste des relevés" id="id_premier_parametre_sous_menu_releve"
+                      parent="id_premier_releves_mois"
+                      action="view_action_releves"
+                      sequence="1"  />
+
+      <menuitem id="id_rapport_releves"
+                         name="Rapports"
+                         parent="id_menu_general_gestion_releve"
+                         sequence="3"  />
+
+                <menuitem
+                    id="id_sous_menu_rapport_releves"
+                    name="Relevés"
+                    parent="id_rapport_releves"
+                    action="action_rapport_releve_form_view"
+                    sequence="1" />
+
+
+        <menuitem
+                    name="Paramètre" id="id_premier_parametre_plannique_sous_menu"
+                    parent="id_menu_general_gestion_releve"
+                    sequence="4"  />
+
+
+<!--           <menuitem name="Mois" id="id_premier_parametre_sous_menu_annee"-->
+<!--                      parent="id_premier_parametre_plannique_sous_menu"-->
+<!--                      action="view_action_annee_gs2e"-->
+<!--                      sequence="1" />-->
+
+            <menuitem name="Utilisateurs" id="id_premier_parametre_sous_menu_users"
+                      parent="id_premier_parametre_plannique_sous_menu"
+                      action="base.action_res_users"
+                      sequence="1"
+                      groups="gestion_releve_rq.tableau_admin_releve"
+            />
+
+
+            <menuitem name="Equipements" id="id_premier_parametre_sous_menu_equipement"
+                      parent="id_premier_parametre_plannique_sous_menu"
+                      action="view_action_equipement"
+                      sequence="2"
+                         groups="gestion_releve_rq.tableau_admin_releve"
+            />
+
+             <menuitem name="Actualisé la liste des equipements" id="id_liste_equipement"
+                      parent="id_premier_parametre_plannique_sous_menu"
+                      action="action_rapport_jour_form_view"
+                      sequence="3"   />
+
+       </data>
+    </odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizard_rapport_jour">
+            <field name="name">MISE A JOUR</field>
+            <field name="model">rapport.jour</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Mise a jour">
+                    <sheet>
+                         <h4>Actualisation de la liste des équipements relevés</h4>
+                    </sheet>
+                    <shooter>
+                          <button name="actualise_equipement" type="object" string="Mise à jour equipement" style="margin-right:10px;margin-left:4px;"/>
+
+                    </shooter>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_rapport_jour_form_view">
+            <field name="name">MISE A JOUR</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rapport.jour</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="wizard_rapport_jour"/>
+        </record>
+
+    </data>
+</odoo>

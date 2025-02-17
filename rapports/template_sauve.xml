@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+         <template id="wizard_report_pdf_releve_equipement">
+             <t t-call="web.html_container">
+                 <t t-call="web.internal_layout">
+                     <div class="page">
+                                 <table style="width:100%;text-align:center;" class="table table-responsive table-striped table-bordered thead-dark table-sm">
+                                  <tr>
+                                       <td rowspan="4" style="width:300px;">
+                                           <img src="/gestion_releve_rq/static/img/logo.png" height="180" width="200"/>
+                                       </td>
+                                       <td colspan="8" style="width:1000px;">RELEVE PERIODIQUE DES INDICATEURS</td>
+                                       <td style="width:300px;">Année</td>
+                                       <td style="width:300px;"> <span t-esc="form_data['val_anne']"/></td>
+                                  </tr>
+                                    <tr>
+                                       <td colspan="7">EQUIPE DE QUART</td>
+                                       <td>PERIODE QUART</td>
+                                       <td>Mois</td>
+                                       <td><span t-esc="form_data['val_mois']"/></td>
+                                  </tr>
+                                    <tr>
+                                       <td colspan="6">CHEF EQUIPE</td>
+                                       <td>COLLABORATEUR</td>
+                                       <td rowspan="2" style="text-align:center;margin-top:10px;">
+                                           <t t-if="form_data.get('type_round') =='M'">
+                                             MATIN
+                                           </t>
+                                            <t t-if="form_data.get('type_round') =='N'">
+                                             NUIT
+                                           </t>
+                                            <t t-if="form_data.get('type_round') =='AM'">
+                                             APRES-MIDI
+                                           </t>
+                                            <t t-if="form_data.get('type_round') =='J'">
+                                             JOUR
+                                           </t>
+
+<!--                                           <t t-esc="form_data['type_round']"></t>-->
+                                       </td>
+                                       <td rowspan="2">JOUR</td>
+                                       <td rowspan="2"> <span t-esc="form_data['val_jour']"/></td>
+                                  </tr>
+                                    <tr>
+                                       <td colspan="6"><span t-esc="user.login"/></td>
+                                       <td><span t-esc="user.login"/></td>
+                                  </tr>
+
+                                     </table>
+                                 <table style="width:100%;text-align:center;font-size:14px;" class="table table-responsive table-striped table-bordered thead-dark table-sm">
+                                  <tr>
+                                           <td  style="width:700px;">ELEMENT SUPERVISES</td>
+                                           <td style="width:300px;">Valeurs de référence de bon fonctionnement</td>
+                                           <td  style="width:300px;">Température par defaut</td>
+                                           <td style="width:200px;">Valeur relevé</td>
+                                           <td style="width:200px;">Heure de relevé</td>
+<!--                                           <td style="width:100px;">ROUND 3</td>-->
+<!--                                           <td style="width:100px;">ROUND 4</td>-->
+<!--                                           <td style="width:100px;">ROUND 5</td>-->
+<!--                                           <td style="width:100px;">ROUND 6</td>-->
+<!--                                           <td style="width:100px;">ROUND 7</td>-->
+<!--                                           <td style="width:100px;">ROUND 8</td>-->
+                                  </tr>
+                                    <t t-if="resultat">
+                                       <t t-foreach="resultat" t-as="line">
+                                            <tr>
+                                                  <td><span t-esc="line[0]"/></td>
+                                                  <td><span t-esc="line[1]"/></td>
+                                                  <td><span t-esc="line[2]"/></td>
+                                                  <td><span t-esc="line[3]"/></td>
+                                                  <td><span t-esc="line[4]"/></td>
+                                              </tr>
+                                       </t>
+
+                                     </t>
+                                     <t t-if="test12">
+                                       <t t-foreach="test12" t-as="line">
+                                          <tr>
+                                              <td><span t-esc="line[0]"/></td>
+                                              <td><span t-esc="line[1]"/></td>
+                                              <td><span t-esc="line[2]"/></td>
+                                              <td><span t-esc="line[3]"/></td>
+                                              <td><span t-esc="line[4]"/></td>
+                                      </tr>
+
+                                     </t>
+
+                                   </t>
+
+                                     </table>
+
+
+                          </div>
+                 </t>
+             </t>
+         </template>
+    </data>
+</odoo>
