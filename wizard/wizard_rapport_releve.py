@@ -41,7 +41,7 @@ class RapportReleve(models.TransientModel):
                 JOIN atm_equipement AS equipement ON relev.equi_id = equipement.id
                 WHERE relev.vacation = %s
                 AND relev.date_cache BETWEEN %s AND %s
-                ORDER BY relev.id ASC
+                ORDER BY relev.id DESC
             """
 
             # Exécution de la requête SQL
@@ -70,7 +70,7 @@ class RapportReleve(models.TransientModel):
                    JOIN atm_equipement AS equipement ON relev.equi_id = equipement.id
                    WHERE relev.vacation = %s
                    AND relev.date_cache BETWEEN %s AND %s
-                    ORDER BY relev.id ASC
+                   ORDER BY relev.id DESC
                """
 
             # Exécution de la requête SQL
@@ -99,7 +99,7 @@ class RapportReleve(models.TransientModel):
                    JOIN atm_equipement AS equipement ON relev.equi_id = equipement.id
                    WHERE relev.vacation = %s
                    AND relev.date_cache BETWEEN %s AND %s
-                    ORDER BY relev.id ASC
+                   ORDER BY relev.id DESC
                """
 
             # Exécution de la requête SQL
